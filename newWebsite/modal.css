@@ -97,7 +97,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 } 
 
@@ -199,6 +198,9 @@ input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
+}
+input.error {
+  border: 2px solid red;
 }
 .text-control {
   margin: 0;
