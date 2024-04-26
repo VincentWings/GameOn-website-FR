@@ -152,6 +152,13 @@ main {
   background: #3876ac;
 }
 
+.button[disabled=disabled], 
+.button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
 .smFont {
   font-size: 16px;
 }

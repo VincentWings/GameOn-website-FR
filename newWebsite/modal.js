@@ -1,56 +1,77 @@
-// DOM Elements
+// Variable Declarations
 const modalbg = document.querySelector(".bground");
 const modalBtns = document.querySelectorAll(".modal-btn");
-const formInputs = document.querySelectorAll(".formData");
 const modalClose = document.querySelector(".close");
 const toggleButton = document.querySelector('#toggleButton');
 const reserveForm = document.querySelector("form[name='reserve']");
+const readAndAgreedCheckbox = document.querySelector("#checkbox1");
+const submitButton = document.querySelector(".btn-submit");
 
-// Toggle Responsive nav
+// Event Listeners
 toggleButton.addEventListener('click', toggleResponsiveNav);
-
-// Launch modal event
-modalBtns.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// Close modal event
+modalBtns.forEach(btn => btn.addEventListener("click", launchModal));
 modalClose.addEventListener("click", closeModal);
-
-// Add event listener for form submission
 reserveForm.addEventListener("submit", validateForm);
+readAndAgreedCheckbox.addEventListener('change', toggleSubmitButton);
+readAndAgreedCheckbox.addEventListener('change', checkReadAndAgree);
 
-// Toggle Responsive nav
+// Initial function calls
+// ...
+
+// Function Declarations
 function toggleResponsiveNav() {
   const myTopNav = document.getElementById("myTopnav");
   myTopNav.classList.toggle("responsive");
 }
 
-// Launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-// Close modal form
 function closeModal() {
   modalbg.style.display = "none";
 }
 
-// Validate form
 function validateForm(event) {
-  event.preventDefault();
-
   const isValid = checkFields();
-
-  if (isValid) {
-    console.log("true");
-  } else {
-    console.log("false");
-  }
+  const readAndAgree = checkReadAndAgree();
+  console.log(isValid);
+  console.log(readAndAgree);
 }
 
-// Check fields
+function toggleSubmitButton() {
+  // Check if the checkbox is checked
+  const isCheckboxChecked = readAndAgreedCheckbox.checked; // true or false
+
+  // Toggle the checked attribute of the checkbox:
+  // If the checkbox is currently checked, remove the checked attribute; otherwise, add the checked attribute
+  // If isCheckboxChecked is true, remove the checked attribute, making the checkbox unchecked
+  // If isCheckboxChecked is false, add the checked attribute, making the checkbox checked
+  if (isCheckboxChecked) {
+    readAndAgreedCheckbox.setAttribute('checked', 'checked');
+  } else {
+    readAndAgreedCheckbox.removeAttribute('checked');
+  }
+
+  console.log(isCheckboxChecked);
+
+  // Set the disabled state of the submit button
+  // If the checkbox is checked, enable the submit button; otherwise, disable it
+  // Use the logical NOT operator (!) to toggle the checked state:
+  // If isCheckboxChecked is true, !isCheckboxChecked becomes false,
+  // and if isCheckboxChecked is false, !isCheckboxChecked becomes true.
+  submitButton.disabled = !isCheckboxChecked;
+}
+
 function checkFields() {
   console.log("checked");
   return true;
+}
+
+function checkReadAndAgree(event) {
+  const target = event.target;
+  console.log("event: ", event);
+  console.log("target: ", target);
 }
 
 /*

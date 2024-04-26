@@ -15,8 +15,8 @@
     <div class="header-logo">
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
-    <div class="main-navbar">
 
+    <div class="main-navbar">
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
@@ -28,6 +28,7 @@
     </div>
   </div>
   </div>
+
   <main>
     <div class="hero-section">
       <div class="hero-content">
@@ -35,17 +36,21 @@
           Marathon national<br>
           de jeux vidéos
         </h1>
+
         <p class="hero-text">
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
+
         <button class="btn-signup modal-btn">
           je m'inscris
         </button>
       </div>
+
       <div class="hero-img">
         <img src="./bg_img.jpg" alt="img" />
       </div>
+
       <button class="btn-signup modal-btn">
         je m'inscris
       </button>
@@ -56,20 +61,19 @@
         <span class="close"></span>
         <div class="modal-body">
           <form name="reserve" action="index.html" method="get">
-            <div class="formData">
+            <div class="formData" data-error="field is empty">
               <label for="first">Prénom</label><br>
-              <!-- <input class="text-control" type="text" id="first" name="first" minlength="2" /><br> -->
-              <input class="text-control" type="text" id="first" name="first" /><br>
+              <input class="text-control" type="text" id="first" name="first" minlength="2" placeholder="John" /><br>
             </div>
 
             <div class="formData">
               <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" /><br>
+              <input class="text-control" type="text" id="last" name="last" minlength="2" placeholder="Smith" /><br>
             </div>
 
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" /><br>
+              <input class="text-control" type="email" id="email" name="email" placeholder="john@smith.com" /><br>
             </div>
 
             <div class="formData">
@@ -117,7 +121,7 @@
             </div>
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
+              <input class="checkbox-input" type="checkbox" id="checkbox1" name="readandagree" checked />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
@@ -125,7 +129,7 @@
 
               <br>
 
-              <input class="checkbox-input" type="checkbox" id="checkbox2" />
+              <input class="checkbox-input" type="checkbox" id="checkbox2" name="newsletter"/>
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
                 Je Je souhaite être prévenu des prochains évènements.
@@ -133,17 +137,19 @@
 
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input class="button btn-submit" type="submit" value="C'est parti" />
           </form>
         </div>
       </div>
     </div>
   </main>
+
   <footer>
     <p class="copyrights">
       Copyright 2014 - 2022, GameOn Inc.
     </p>
   </footer>
+
   <script src="modal.js"></script>
 </body>
 
