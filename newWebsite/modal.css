@@ -190,6 +190,7 @@ main {
 }
 
 .modal-body {
+  position: relative;
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -222,9 +223,9 @@ input.error {
   font-size: 0.4em;
   color: #e54858;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: left;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -307,6 +308,7 @@ input[data-error]::after {
 }
 .close {
   position: absolute;
+  z-index: 1;
   right: 15px;
   top: 15px;
   width: 32px;
@@ -331,7 +333,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -429,7 +432,8 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  max-width: 424px;
+  width: 100%;
 }
 .hero-content::after {
   content: "";
@@ -471,6 +475,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -487,6 +492,33 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+}
+
+.confirmation p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.t-thankyou .bground {
+  display: block;
+}
+.t-thankyou .modal-body {
+  height: 60vh;
+}
+
+.t-thankyou .btn-close {
+  margin-bottom: 20px;
+}
+
+.hide {
+  display: none;
+}
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -495,7 +527,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
   }
   .hero-content::after {
     content: unset;
@@ -504,8 +536,9 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3.7rem;
     white-space: normal;
+    word-break: break-word;
   }
   .hero-text {
     width: unset;
