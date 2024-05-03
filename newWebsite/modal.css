@@ -505,6 +505,10 @@ footer {
   margin-bottom: auto;
 }
 
+.confirmation .button {
+  margin-top: 20px;
+}
+
 .t-thankyou .bground {
   display: block;
 }

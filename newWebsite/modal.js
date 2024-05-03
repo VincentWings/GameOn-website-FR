@@ -164,21 +164,17 @@ function validateForm(event) {
     return false;
   }
 
-  // If there are no errors, submit the form
-  reserveForm.submit();
-
   // Call the confirmation message function
   confirmMessageSent();
+
+  // If there are no errors, submit the form
+  //reserveForm.submit();
 }
 
 function confirmMessageSent() {
   confirmationDiv.classList.remove("hide");
   reserveForm.classList.add("hide");
   console.log("Your message has been sent!");
-
-  setTimeout(() => {
-    console.clear(); // Clear the console
-  }, 3000);
 }
 
 function isValidEmail(email) {
