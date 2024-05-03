@@ -174,7 +174,6 @@ function validateForm(event) {
 function confirmMessageSent() {
   confirmationDiv.classList.remove("hide");
   reserveForm.classList.add("hide");
-  console.log("Your message has been sent!");
 }
 
 function isValidEmail(email) {
