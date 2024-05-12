@@ -1,6 +1,6 @@
 # GameOn
 
-https://vincentwings.github.io/gameon/
+https://vincentwings.github.io/GameOn-website-FR/
 
 This project is developed for a company organizing gaming competitions.
 
