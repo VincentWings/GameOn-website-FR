@@ -1,5 +1,15 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# GameOn
+
+https://vincentwings.github.io/gameon/
+
+This project is developed for a company organizing gaming competitions.
+
+## Project Overview
+
+The goal of this project was to create JavaScript code for form validation using vanilla JavaScript.
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- Javascript
