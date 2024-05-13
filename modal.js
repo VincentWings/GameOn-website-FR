@@ -212,5 +212,5 @@ function isValidDate(date) {
 function isValidQuantity(quantity) {
   // Check if the quantity is a valid number
   // Return true if it is a number, otherwise return false
-  return !isNaN(quantity);
+  return quantity !== '' && !isNaN(quantity);
 }
