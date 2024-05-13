@@ -174,6 +174,31 @@ function validateForm(event) {
 function confirmMessageSent() {
   confirmationDiv.classList.remove("hide");
   reserveForm.classList.add("hide");
+
+   // Call the confirmation Data function
+   confirmDataSent();
+}
+
+function confirmDataSent() {
+  const fields = ['first', 'last', 'email', 'birthdate', 'quantity', 'location1', 'location2', 'location3', 'location4', 'location5', 'location6', 'checkbox1', 'checkbox2'];
+
+  // Show the values of input fields
+  fields.forEach(fieldId => {
+    const input = document.getElementById(fieldId);
+
+    if (input.type === 'radio') {
+      // Check if any radio button in the "location" group is checked
+      const isLocationChecked = document.querySelector('input[name="location"]:checked');
+      
+      if (isLocationChecked) {
+        console.log(`${fieldId}: ${input.checked ? 'checked' : 'unchecked'}`);
+      }
+    } else if (input.type === 'checkbox') {
+      console.log(`${fieldId}: ${input.checked ? 'checked' : 'unchecked'}`);
+    } else {
+      console.log(`${fieldId}: ${input.value}`);
+    }
+  });
 }
 
 function isValidEmail(email) {
